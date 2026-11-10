@@ -48,14 +48,14 @@ body{font-family:'Noto Sans TC',sans-serif;background:linear-gradient(160deg,#FF
 .popup-amt{font-size:60px;font-weight:900;color:#E08A1E;line-height:1;}
 .popup-close{margin-top:18px;padding:11px 34px;border-radius:12px;border:none;background:linear-gradient(135deg,#F2A93B,#E08A1E);color:white;font-family:'Noto Sans TC',sans-serif;font-size:15px;font-weight:900;cursor:pointer;}
 
-.mode-screen{position:fixed;inset:0;background:#FFF8E1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;z-index:9999;padding-bottom:40px;overflow:hidden;}
+.mode-screen{position:fixed;inset:0;background:#FFF8E1;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;padding:8px 8px 40px;overflow:hidden;}
 .mode-screen.hide{display:none;}
-.mode-hero-img{position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:600px;height:calc(100% - 120px);object-fit:cover;object-position:top;}
-.mode-btns{position:relative;z-index:2;display:flex;gap:18px;padding:12px 20px;background:rgba(255,248,225,0.9);border-radius:20px;backdrop-filter:blur(4px);}
+.mode-hero-img{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100vh - 170px);max-height:calc(100dvh - 170px);object-fit:contain;border-radius:14px;flex:0 1 auto;min-height:0;}
+.mode-btns{position:relative;z-index:2;margin-top:10px;flex:0 0 auto;display:flex;gap:18px;padding:12px 20px;background:rgba(255,248,225,0.9);border-radius:20px;backdrop-filter:blur(4px);}
 .mode-btn{padding:16px 30px;border-radius:16px;border:3px solid #EDBB5B;background:white;font-family:'Noto Sans TC',sans-serif;font-size:18px;font-weight:900;color:#E08A1E;cursor:pointer;box-shadow:0 4px 16px rgba(224,138,30,.2);transition:all .15s;}
 .mode-btn:hover{background:#FFF1CC;transform:scale(1.04);}
 .mode-btn.solo{background:linear-gradient(135deg,#F2A93B,#E08A1E);color:white;border-color:#E08A1E;box-shadow:0 4px 20px rgba(224,138,30,.4);}
-.go-btn{position:relative;z-index:2;width:84px;height:84px;border-radius:50%;border:none;background:linear-gradient(135deg,#F2A93B,#E08A1E);color:white;font-size:42px;font-weight:900;line-height:1;cursor:pointer;box-shadow:0 6px 22px rgba(224,138,30,.45);animation:goPulse 1.3s ease-in-out infinite;}
+.go-btn{position:relative;z-index:2;margin-top:10px;flex:0 0 auto;width:84px;height:84px;border-radius:50%;border:none;background:linear-gradient(135deg,#F2A93B,#E08A1E);color:white;font-size:42px;font-weight:900;line-height:1;cursor:pointer;box-shadow:0 6px 22px rgba(224,138,30,.45);animation:goPulse 1.3s ease-in-out infinite;}
 .go-btn:active{transform:scale(.92);}
 @keyframes goPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
 
@@ -133,6 +133,23 @@ body{padding-bottom:34px;}
 .tip[data-sm="1"] .ch{font-size:50px;}
 .tip[data-sm="1"] .py,.tip[data-sm="1"] .zy{font-size:18px;}
 .logo-wrap img{width:min(300px,60vw);}
+
+.q-row{display:flex;justify-content:flex-end;gap:12px;margin-top:14px;flex-wrap:wrap;}
+.q-btn{padding:10px 20px;border-radius:14px;border:3px solid #EDBB5B;background:white;font-family:'Noto Sans TC',sans-serif;font-size:20px;font-weight:900;color:#E08A1E;cursor:pointer;box-shadow:0 3px 10px rgba(224,138,30,.2);}
+.q-btn:active{transform:scale(.95);}
+.q-row-pop{margin-top:16px;display:flex;justify-content:flex-end;}
+.pop-lg .popup-box{padding:36px 56px;}
+.pop-lg .q-title{font-size:34px;font-weight:900;color:#B8630F;margin-bottom:16px;}
+.pop-lg .popup-close{font-size:26px;padding:14px 44px;}
+.carrier-svg{display:block;margin:0 auto;width:auto;height:min(400px,48vh);}
+.thanks-lg .popup-box{padding:40px 64px;}
+.thanks-lg .popup-amt{font-size:110px;}
+.thanks-lg .bell{font-size:64px;margin-bottom:8px;}
+.thanks-lg .yuan{font-size:40px;font-weight:700;color:#B8630F;margin-top:6px;}
+.thanks-lg .thx{font-size:56px;font-weight:900;color:#B8630F;margin-top:14px;}
+.thanks-lg .popup-close{font-size:28px;padding:16px 48px;margin-top:24px;}
+.ecoq-box .tc .py{font-size:30px}.ecoq-box .tc .ch{font-size:90px}.ecoq-box .tc .zy{font-size:30px}
+@media(max-width:560px){.pop-lg .popup-box{padding:22px 24px;}.thanks-lg .popup-box{padding:24px 28px;}.thanks-lg .popup-amt{font-size:84px;}.thanks-lg .thx{font-size:44px;}.ecoq-box .tc .ch{font-size:56px}.ecoq-box .tc .py,.ecoq-box .tc .zy{font-size:20px}.ecoq-box .tc{min-width:40px}}
 </style>
 </head>
 <body>
@@ -185,10 +202,10 @@ body{padding-bottom:34px;}
   </div>
 </div>
 
-<div class="popup" id="carrierPopup">
+<div class="popup pop-lg" id="carrierPopup">
   <div class="popup-box">
-    <div style="font-size:20px;font-weight:900;color:#B8630F;margin-bottom:14px;">有會員載具嗎？</div>
-    <svg width="130" height="200" viewBox="0 0 130 200" style="display:block;margin:0 auto;">
+    <div class="q-title">有會員載具嗎？</div>
+    <svg class="carrier-svg" viewBox="0 0 130 200">
       <rect x="6" y="2" width="118" height="196" rx="20" fill="#E8DECB" stroke="#3A2E1E" stroke-width="3"/>
       <rect x="14" y="14" width="102" height="172" rx="12" fill="#FBF7EF"/>
       <text x="65" y="42" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#7A6A52">11月15日 星期六</text>
@@ -206,21 +223,29 @@ body{padding-bottom:34px;}
       </g>
       <text x="65" y="144" text-anchor="middle" font-family="monospace" font-size="6" fill="#5C5040">/AB3-X9K</text>
     </svg>
-    <div style="display:flex;gap:14px;margin-top:20px;justify-content:center;">
+    <div style="display:flex;gap:18px;margin-top:20px;justify-content:center;">
       <button class="popup-close" onclick="answerCarrier(true)">有</button>
       <button class="popup-close" style="background:linear-gradient(135deg,#B0BEC5,#78909C)" onclick="answerCarrier(false)">沒有</button>
     </div>
+    <div class="q-row-pop" id="carrierReplay" style="display:none"><button class="q-btn" type="button" onclick="say('有載具嗎？')">🔊 再聽一次</button></div>
   </div>
 </div>
 
 
-<div class="popup" id="popup">
+<div class="popup pop-lg" id="ecoQPopup" onclick="closeEcoQ()">
+  <div class="popup-box ecoq-box" onclick="event.stopPropagation()">
+    <div class="tip-chars" id="ecoQChars"></div>
+    <button class="popup-close" type="button" onclick="closeEcoQ()">關閉</button>
+  </div>
+</div>
+
+<div class="popup thanks-lg" id="popup">
   <div class="popup-box">
-    <div style="font-size:36px;margin-bottom:6px;">🛎️</div>
+    <div class="bell">🛎️</div>
     <div class="popup-amt" id="popupAmt">0</div>
-    <div style="font-size:22px;font-weight:700;color:#B8630F;margin-top:4px;">元</div>
-    <div style="font-size:30px;font-weight:900;color:#B8630F;margin-top:10px;">謝謝光臨！</div>
-    <button class="popup-close" style="font-size:18px" onclick="closePopup()">再練一次</button>
+    <div class="yuan">元</div>
+    <div class="thx">謝謝光臨！</div>
+    <button class="popup-close" onclick="closePopup()">再練一次</button>
   </div>
 </div>
 
@@ -393,7 +418,11 @@ function renderStep(){
     h+='<div class="step-row">';OPTS[key].forEach(function(p){var nm=(key==='sauce1'&&p.v==='yes')?'醬油膏':(key==='sauce2'&&p.v==='yes')?'辣椒醬':'';
       h+='<div class="opt'+(o[key]===p.v?' sel':'')+'" data-v="'+p.v+'"'+(nm?' data-n="'+nm+'"':'')+'><div class="art">'+p.h()+'</div>'+(key==='dtemp'&&solo?'':'<span class="opt-lbl">'+p.l+'</span>')+'</div>';});h+='</div>';}
   h+='<button class="next-btn" id="nextBtn"'+(can?'':' disabled')+'>'+(isLast?'完成 ✓':'下一步 →')+'</button>';
-  card.innerHTML=h;document.getElementById('nextBtn').onclick=nextStep;}
+  var qb='';if(key==='eco')qb+='<button class="q-btn" type="button" id="ecoQBtn">👀 看問題</button>';if(solo)qb+='<button class="q-btn" type="button" id="replayBtn">🔊 再聽一次</button>';
+  if(qb)h+='<div class="q-row">'+qb+'</div>';
+  card.innerHTML=h;document.getElementById('nextBtn').onclick=nextStep;
+  var rb=document.getElementById('replayBtn');if(rb)rb.onclick=function(){AC.resume();sayPrompt(key);};
+  var eb=document.getElementById('ecoQBtn');if(eb)eb.onclick=openEcoQ;}
 
 function price(){var d=dish(o.food),p=d?d.price:0;(o.top||[]).forEach(function(k){p+=topPrice(topOf(k));});
   if(o.drink&&o.drink!=='none'){p+=dish(o.drink).price+({L:5,S:-5}[o.dsize]||0);if(o.eco==='yes')p-=5;if(o.straw==='yes')p+=2;}
@@ -418,7 +447,11 @@ function pick(key,v){AC.resume();soundSel(key);
   o[key]=v;renderStep();}
 function nextStep(){AC.resume();soundNext();hideTip();var steps=getSteps();
   if(o.step<steps.length-1){o.step++;renderStep();sayPrompt(getSteps()[o.step]);}else{o.done=true;render();}}
-function checkout(){AC.resume();document.getElementById('carrierPopup').classList.add('show');say('有載具嗎？');}
+var ECOQ={t:'有環保杯嗎？',py:['yǒu','huán','bǎo','bēi','ma',''],zy:['ㄧㄡˇ','ㄏㄨㄢˊ','ㄅㄠˇ','ㄅㄟ','ㄇㄚ˙','']};
+function openEcoQ(){var h='';for(var i=0;i<ECOQ.t.length;i++)h+='<div class="tc"><div class="py">'+ECOQ.py[i]+'</div><div class="ch">'+ECOQ.t.charAt(i)+'</div><div class="zy">'+ECOQ.zy[i]+'</div></div>';
+  document.getElementById('ecoQChars').innerHTML=h;document.getElementById('ecoQPopup').classList.add('show');}
+function closeEcoQ(){document.getElementById('ecoQPopup').classList.remove('show');}
+function checkout(){AC.resume();document.getElementById('carrierReplay').style.display=solo?'flex':'none';document.getElementById('carrierPopup').classList.add('show');say('有載具嗎？');}
 function answerCarrier(){AC.resume();beep(800,.07);document.getElementById('carrierPopup').classList.remove('show');playAudio(sndCheckout);
   var t=price();document.getElementById('popupAmt').textContent=t;document.getElementById('popup').classList.add('show');say('好的，一共'+t+'塊錢，謝謝光臨！');}
 function closePopup(){hideTip();document.getElementById('popup').classList.remove('show');speechSynthesis.cancel();
